@@ -1,0 +1,39 @@
+/*C12*/SET SCHEMA PUBLIC
+drop table if exists hotel_booking CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table hotel_booking (id bigint not null, customer_name varchar(255), hotel_name varchar(255), number_of_nights integer not null, rate_per_night double not null, primary key (id))
+INSERT INTO HOTEL_BOOKING VALUES(1,'Customer1','Marriot',2,75.0E0)
+INSERT INTO HOTEL_BOOKING VALUES(2,'Customer2','Ibis',4,50.0E0)
+INSERT INTO HOTEL_BOOKING VALUES(3,'Customer3','Novotel',1,60.0E0)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+INSERT INTO HOTEL_BOOKING VALUES(4,'Customer4','Continental',1,80.0E0)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 5
+COMMIT
+DELETE FROM HOTEL_BOOKING WHERE ID=3
+COMMIT
+INSERT INTO HOTEL_BOOKING VALUES(5,'Customer4','Continental',1,80.0E0)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 6
+COMMIT
+drop table if exists hotel_booking CASCADE 
+drop sequence hibernate_sequence if exists
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C16*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C17*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C18*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C19*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C20*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C21*/SET SCHEMA PUBLIC
+DISCONNECT
